@@ -53,6 +53,10 @@ void Painter::paint(QPainter *painter, QPaintEvent *event, int elapsed)
     // Set indicators according to vehicle values
     updateIndicators();
 
+    //Speedo background lines
+    drawCenteredAt(painter, images->at("speedometer_background.png"), HALF_SCREEN_WIDTH, HALF_SCREEN_HEIGHT);
+
+/* // old gauge images
     // Draw center lines
     drawCenteredAt(painter, images->at("center_lines.png"), HALF_SCREEN_WIDTH, HALF_SCREEN_HEIGHT);
 
@@ -191,7 +195,7 @@ void Painter::paint(QPainter *painter, QPaintEvent *event, int elapsed)
     painter->setFont(largeText);
     painter->drawText(565.0f, 45.0f, 150.0f, 30.0f, Qt::AlignCenter | Qt::AlignTop, QTime::currentTime().toString("h:mm a"));
     painter->setOpacity(1.0);
-
+*/
     // Frame counter
 //    painter->setFont(normalText);
 //    painter->drawText(0.0f, 0.0f, 150.0f, 20.0f, Qt::AlignLeading, QString("%1").arg(frameCounter));
