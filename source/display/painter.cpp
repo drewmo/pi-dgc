@@ -13,6 +13,7 @@ Painter::Painter(VehicleValues &vehicle)
     backgroundBrush = QBrush(QColor(0, 0, 0));
     shiftLightBrush = QBrush(QColor(255, 0, 0));
 
+    // Set all fonts and sizes
     largeGauge.setFamily("bladitwo4fitalic");
     largeGauge.setPointSize(30);
     smallGauge.setFamily("bladitwo4fitalic");
@@ -171,19 +172,19 @@ void Painter::paint(QPainter *painter, QPaintEvent *event, int elapsed)
     painter->drawText(247.0f - 60.0f, 340.0f - 10.0f, 120.0f, 20.0f, Qt::AlignCenter | Qt::AlignHCenter, QString("%1 psi").arg((int)vehicle->getBoost()));
     // Battery voltage
     QString voltage;
-    voltage.sprintf("%.1f", vehicle->getVoltage());
+    voltage.asprintf("%.1f", vehicle->getVoltage());
     painter->drawText(1031.0f - 20.0f, 388.5f - 10.0f, 40.0f, 20.0f, Qt::AlignCenter | Qt::AlignHCenter, voltage);
 
     painter->setFont(normalText);
     painter->setOpacity(0.8);
     // Trip odometer
     QString tripText;
-    tripText.sprintf("Trip: %.1f", vehicle->getTripOdometer());
+    tripText.asprintf("Trip: %.1f", vehicle->getTripOdometer());
     painter->drawText(430.0f, 415.0f, 300.0f, 20.0f, Qt::AlignLeading, tripText);
 
     // Odometer
     QString odometerText;
-    odometerText.sprintf("%.1f", vehicle->getOdometer());
+    odometerText.asprintf("%.1f", vehicle->getOdometer());
     painter->drawText(575.0f, 415.0f, 300.0f, 20.0f, Qt::AlignTrailing, odometerText);
 
     // Clock

@@ -5,6 +5,7 @@
 #include <QString>
 #include <QByteArray>
 #include <QDebug>
+#include <QImage>
 #include <map>
 
 using namespace std;
